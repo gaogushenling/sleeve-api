@@ -8,12 +8,10 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-public class BannerItem extends BaseEntity{
+@Table(name = "spu_img", schema = "sleeve-api", catalog = "")
+public class SpuImgDO extends BaseEntity {
     @Id
-    private Long id;
+    private int id;
     private String img;
-    private String keyword;
-    private short type;
-    private Long bannerId;
-    private String name;
+    private Integer spuId;
 }

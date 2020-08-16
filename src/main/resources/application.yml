@@ -3,4 +3,11 @@ spring:
     active: dev
   jpa:
     hibernate:
-      ddl-auto: update
+      #      表创建方式 create create-drop update none
+      ddl-auto: none
+  jackson:
+    #    字段序列化格式
+    property-naming-strategy: SNAKE_CASE
+    #    国际化UTC时间改成时间戳
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: true

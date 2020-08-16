@@ -3,7 +3,9 @@ package com.robinstudio.sleeveapi.service;
 import com.robinstudio.sleeveapi.model.Banner;
 import com.robinstudio.sleeveapi.repository.BannerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class BannerServiceImpl implements BannerService {
     @Autowired
     private BannerRepository bannerRepository;
