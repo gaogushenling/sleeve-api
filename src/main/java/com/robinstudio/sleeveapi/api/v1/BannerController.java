@@ -1,5 +1,7 @@
 package com.robinstudio.sleeveapi.api.v1;
 
+import com.robinstudio.sleeveapi.core.interceptors.ScopeLevel;
+import com.robinstudio.sleeveapi.exception.http.NotFoundException;
 import com.robinstudio.sleeveapi.model.Banner;
 import com.robinstudio.sleeveapi.sample.hero.Diana;
 import com.robinstudio.sleeveapi.sample.hero.ISkill;
@@ -51,11 +53,11 @@ public class BannerController {
     private BannerService bannerService;
 
     @GetMapping("/name/{name}")
+    @ScopeLevel()
     public Banner getByName(@PathVariable @NotBlank String name) {
         Banner banner = bannerService.getByName(name);
         if(banner == null){
-            // 自定义异常 week 12
-            // throw new NotFoundException(30005)
+            throw new NotFoundException(30005);
         }
         return banner;
     }

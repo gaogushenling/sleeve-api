@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Irelia implements ISkill {
     public Irelia() {
-        System.out.println("Irelia");
+        // System.out.println("Irelia");
     }
 
     public void q() {

@@ -12,3 +12,8 @@ spring:
 #      hibernate:
 #        show_sql: true
 #        format_sql: true
+
+sleeve:
+  security:
+    jwt-key: sleeve
+    token-expired-at: 86400000  # 1天

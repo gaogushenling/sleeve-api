@@ -3,11 +3,18 @@ spring:
     active: dev
   jpa:
     hibernate:
-      #      表创建方式 create create-drop update none
+      # 表创建方式 create create-drop update none
       ddl-auto: none
   jackson:
-    #    字段序列化格式
+    # 字段序列化格式
     property-naming-strategy: SNAKE_CASE
-    #    国际化UTC时间改成时间戳
+    # 国际化UTC时间改成时间戳
     serialization:
       WRITE_DATES_AS_TIMESTAMPS: true
+
+# 微信相关参数
+wx:
+  appid: wx3911a0af26620af8
+  appsecret: f2759c6083a6d3eb4be35060db4b3091
+  # auth.code2session https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/login/auth.code2Session.html
+  code2session: https://api.weixin.qq.com/sns/jscode2session?appid={0}&secret={1}&js_code={2}&grant_type=authorization_code
