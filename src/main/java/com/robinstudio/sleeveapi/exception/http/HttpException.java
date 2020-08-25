@@ -3,11 +3,13 @@ package com.robinstudio.sleeveapi.exception.http;
 public class HttpException extends RuntimeException {
     protected Integer code;
 
-    public Integer getCode(){return code;}
+    protected Integer httpStatusCode = 500;
 
-    public Integer getHttpStatusCode(){
-        return httpStatusCode;
+    public Integer getCode() {
+        return code;
     }
 
-    protected Integer httpStatusCode = 500;
+    public Integer getHttpStatusCode() {
+        return httpStatusCode;
+    }
 }

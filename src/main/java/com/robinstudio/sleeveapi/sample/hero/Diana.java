@@ -1,9 +1,10 @@
 package com.robinstudio.sleeveapi.sample.hero;
 
+import com.robinstudio.sleeveapi.sample.ISkill;
 import org.springframework.stereotype.Component;
 
-@Component
-public class Diana implements ISkill{
+// @Component
+public class Diana implements ISkill {
     public Diana(){
         // System.out.println("Diana");
     }

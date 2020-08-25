@@ -7,9 +7,7 @@
 
 ## 问题
 
-1. 令牌与权限 5-7 令牌生成测试 User表创建用户没有自动生成create_time, update_time 
-2. /util/JwtToken 要注意加上注解 @Component
-3. HttpException问题
+1. 令牌与权限 5-7 令牌生成测试 User 表创建用户没有自动生成 create_time, update_time 
 
 ## week-18 优惠券
 

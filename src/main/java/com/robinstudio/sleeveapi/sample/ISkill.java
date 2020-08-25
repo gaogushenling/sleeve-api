@@ -1,4 +1,4 @@
-package com.robinstudio.sleeveapi.sample.hero;
+package com.robinstudio.sleeveapi.sample;
 
 public interface ISkill {
     void q();

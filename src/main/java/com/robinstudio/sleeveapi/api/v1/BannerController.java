@@ -1,10 +1,11 @@
 package com.robinstudio.sleeveapi.api.v1;
 
 import com.robinstudio.sleeveapi.core.interceptors.ScopeLevel;
+import com.robinstudio.sleeveapi.exception.http.ForbiddenException;
 import com.robinstudio.sleeveapi.exception.http.NotFoundException;
 import com.robinstudio.sleeveapi.model.Banner;
-import com.robinstudio.sleeveapi.sample.hero.Diana;
-import com.robinstudio.sleeveapi.sample.hero.ISkill;
+import com.robinstudio.sleeveapi.sample.IConnect;
+import com.robinstudio.sleeveapi.sample.ISkill;
 import com.robinstudio.sleeveapi.service.BannerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -32,21 +33,30 @@ public class BannerController {
     //     this.diana = diana;
     // }
 
+    @Autowired
+    private ISkill iSkill;
+
     // @Autowired
-    // private ISkill iSkill;
+    // private ISkill irelia;
+    //
+    // @Autowired
+    // private ISkill diana;
+    //
+    // @Autowired
+    // private ISkill camille;
 
     @Autowired
-    private ISkill irelia;
-
-    @Autowired
-    private ISkill diana;
+    private IConnect iConnect;
 
     @GetMapping("/test")
     public String test() {
-        // iSkill.e();
-        irelia.q();
-        diana.r();
-        return "abc";
+        iSkill.e();
+        // irelia.q();
+        // diana.r();
+        // camille.r();
+        // iConnect.connect();
+        // return "abc";
+        throw new ForbiddenException(10001);
     }
 
     @Autowired

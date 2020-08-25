@@ -12,6 +12,19 @@ spring:
     serialization:
       WRITE_DATES_AS_TIMESTAMPS: true
 
+# configuration 测试
+mysql:
+  port: 3307
+  ip: 127.0.0.1
+
+# condition 测试
+hero:
+  condition: diana
+
+# 自定义Prefix
+project:
+  api-package: com.robinstudio.sleeveapi.api
+
 # 微信相关参数
 wx:
   appid: wx3911a0af26620af8

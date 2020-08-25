@@ -1,8 +1,9 @@
 package com.robinstudio.sleeveapi.sample.hero;
 
+import com.robinstudio.sleeveapi.sample.ISkill;
 import org.springframework.stereotype.Component;
 
-@Component
+// @Component
 public class Irelia implements ISkill {
     public Irelia() {
         // System.out.println("Irelia");
