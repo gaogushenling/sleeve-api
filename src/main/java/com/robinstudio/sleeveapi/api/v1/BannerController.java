@@ -1,6 +1,7 @@
 package com.robinstudio.sleeveapi.api.v1;
 
 import com.robinstudio.sleeveapi.core.interceptors.ScopeLevel;
+import com.robinstudio.sleeveapi.dto.PersonDTO;
 import com.robinstudio.sleeveapi.exception.http.ForbiddenException;
 import com.robinstudio.sleeveapi.exception.http.NotFoundException;
 import com.robinstudio.sleeveapi.model.Banner;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 
 @RestController
@@ -59,6 +61,16 @@ public class BannerController {
         throw new ForbiddenException(10001);
     }
 
+    @PostMapping("/test1/{id}")
+    public PersonDTO test1(@PathVariable @Max(10) Integer id, @RequestParam String name, @RequestBody @Validated PersonDTO person) {
+        // PersonDTO dto = new PersonDTO();
+        PersonDTO dto = PersonDTO.builder()
+                .name("robin")
+                .age(18)
+                .build();
+        return dto;
+    }
+
     @Autowired
     private BannerService bannerService;
 
@@ -66,7 +78,7 @@ public class BannerController {
     @ScopeLevel()
     public Banner getByName(@PathVariable @NotBlank String name) {
         Banner banner = bannerService.getByName(name);
-        if(banner == null){
+        if (banner == null) {
             throw new NotFoundException(30005);
         }
         return banner;
